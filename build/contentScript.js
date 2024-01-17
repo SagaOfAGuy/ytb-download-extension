@@ -37,7 +37,6 @@ async function areElementsLoaded(selector) {
     }
     return [ document.querySelectorAll(selector) ];
 }; 
-  
 
 
 // Create button
@@ -101,7 +100,6 @@ function createSpinner() {
 }
   
 
-
 // Method to create a request
 async function postRequest(serverUrl,method,data='',contentType) {
     // Request options
@@ -159,7 +157,6 @@ async function downloadVideo(url,filename) {
 }
 
 
-
 // Store the youtube link
 function setYoutubeLink(url) {
   var key = 'youtubeLink';
@@ -171,7 +168,6 @@ function setYoutubeLink(url) {
     console.log('youtubeLink stored:', url);
   });
 }
-
 
 
 // Retrieve the youtubeLink variable from chrome.storage.local
@@ -202,7 +198,7 @@ async function sendLink() {
     try {
       // POST request options
       //const url = 'http://127.0.0.1:3000/getLink'; 
-      const url = 'https://pfmjmsnfzq.us-west-2.awsapprunner.com/getLink'
+      const url = 'https://ixrhxyqtex.us-west-2.awsapprunner.com/getLink'
       const options = {
         method: 'POST',
         headers: {
@@ -334,32 +330,6 @@ chrome.runtime.onMessage.addListener(async function (request, sender, sendRespon
       btn.innerText = "Processing...";
       var spinner = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.createSpinner)(); 
       btn.appendChild(spinner); 
-      // Code for including the download percentage values text in the buttons
-      /*
-      const options = {
-        method: 'GET',
-      }
-      btn.appendChild(spinner); 
-      const progressInterval = setInterval(async () => {
-        const response = await fetch('https://pfmjmsnfzq.us-west-2.awsapprunner.com/getProgress'); 
-        //const response = await fetch('http://127.0.0.1:3000/getProgress');
-        const progressData = await response.json();
-
-
-        // Handle progress data (you can log it or do something else)
-        console.log(`Progress update: ${progressData.progress}%`);
-        btn.innerText =  `Download Progress: ${progressData.progress.toFixed(2)}%`;
-        
-
-        // Check if progress is 100% and stop fetching
-        if (progressData.progress.toFixed(2) == 100) {
-          clearInterval(progressInterval);
-          console.log("Download complete. Stopping progress updates.");
-          btn.innerText = "Processing Video...";
-        }
-      }, 10);
-      */ 
-
 
       // Send the link
       var linkResponse = await (0,_utils__WEBPACK_IMPORTED_MODULE_0__.sendLink)(); 
@@ -368,7 +338,7 @@ chrome.runtime.onMessage.addListener(async function (request, sender, sendRespon
       btn.innerText = "Download"; 
 
       // Ping endpoint to delete youtube video from s3 bucket
-      await fetch('https://pfmjmsnfzq.us-west-2.awsapprunner.com/finished'); 
+      await fetch('https://ixrhxyqtex.us-west-2.awsapprunner.com/finished'); 
     });
   } else {
     console.log("Not on youtube video page"); 

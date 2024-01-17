@@ -15,7 +15,6 @@ export async function areElementsLoaded(selector) {
     }
     return [ document.querySelectorAll(selector) ];
 }; 
-  
 
 
 // Create button
@@ -79,7 +78,6 @@ export function createSpinner() {
 }
   
 
-
 // Method to create a request
 export async function postRequest(serverUrl,method,data='',contentType) {
     // Request options
@@ -137,7 +135,6 @@ export async function downloadVideo(url,filename) {
 }
 
 
-
 // Store the youtube link
 export function setYoutubeLink(url) {
   var key = 'youtubeLink';
@@ -149,7 +146,6 @@ export function setYoutubeLink(url) {
     console.log('youtubeLink stored:', url);
   });
 }
-
 
 
 // Retrieve the youtubeLink variable from chrome.storage.local
@@ -180,7 +176,7 @@ export async function sendLink() {
     try {
       // POST request options
       //const url = 'http://127.0.0.1:3000/getLink'; 
-      const url = 'https://pfmjmsnfzq.us-west-2.awsapprunner.com/getLink'
+      const url = 'https://ixrhxyqtex.us-west-2.awsapprunner.com/getLink'
       const options = {
         method: 'POST',
         headers: {
