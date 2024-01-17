@@ -24,7 +24,7 @@ git clone https://github.com/SagaOfAGuy/ytb-download-extension.git
 ![Alt text](images/image-2.png)
 
 
-4. Import the `build` directory, and click the **"Select"** button
+4. Import the `build` directory from the `ytb-download-extension` directory that we just cloned in step 1, and click the **"Select"** button
 
 ![Alt text](images/image-3.png)
 
